@@ -6,3 +6,5 @@ The goal of the project is to use Deep Learning models and already available API
 
 This will be done using a combination of Automatic Speech Recognition, Machine Translation, and Text-to-speech models.
 A general workflow of the project will be as shown below:
+
+![alt text](https://github.com/ChiragBellara/Video-Translation-Using-Deep-Learning/blob/main/Information/Workflow.jpg)
