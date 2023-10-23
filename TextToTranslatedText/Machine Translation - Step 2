@@ -1,5 +1,5 @@
 This Folder Contains the code which Translates the Text to a different Language.
-I have demonstrated Text Translation from English to Spanish But it is capable of Translating most languages.
+I have demonstrated Text Translation from English to Hindi But it is capable of Translating most languages.
 
 The output of this step - Machine Translation will serve as the input for the Next Step 'Text to Speech'
 
