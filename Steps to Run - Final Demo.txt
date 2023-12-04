@@ -1,0 +1,20 @@
+Open the Video_Translation_Final_Demo.ipynb in Google Colab
+Download the Flask App folder from the repo
+Run the Final Demo until the cell which creates the templates and static folder
+    It has commands that look like this
+    checkAndMakeDir('/content/templates')
+    checkAndMakeDir('/content/static')
+
+Now, once the templates folder is created in '/content', 
+upload all the files from Flask App templates folder to this templates folder
+Next, to upload the static files, we need to first upload the zip folder of assets.
+Running the next cell should prompt you to upload the assets zip folder to Colab
+The commands that follow, basically unzip the assets folder and place it in the /content/static folder
+Also, upload the styles.css file to this folder.
+
+Next you have to get a NGROK auth token. 
+See https://dashboard.ngrok.com/get-started/setup to generate the Auth Token
+
+Once all this is done, you can run the remaining cells.
+
+PS: If you face any errors or do not understand any steps, feel free to drop an email to me at chiragbellara7@gmail.com.

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="{{ url_for('static', filename='assets/img/apple-icon.png') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="{{ url_for('static', filename='assets/img/favicon.png') }}"
+    />
+    <title>Video Translator AI</title>
+    <!-- Fonts and icons -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"
+      rel="stylesheet"
+    />
+    <link
+      href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"
+      rel="stylesheet"
+    />
+    <!-- Nucleo Icons -->
+    <link
+      href="{{ url_for('static', filename='assets/css/nucleo-icons.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='assets/css/nucleo-svg.css') }}"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome Icons -->
+    <link
+      href="{{ url_for('static', filename='assets/css/font-awesome.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='assets/css/nucleo-svg.css') }}"
+      rel="stylesheet"
+    />
+    <!-- CSS Files -->
+    <link
+      href="{{ url_for('static', filename='assets/css/argon-design-system.css') }}"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="index-page">
+    <!-- Navbar -->
+    <nav
+      id="navbar-main"
+      class="navbar navbar-main navbar-expand-lg bg-white navbar-light position-sticky top-0 shadow py-2"
+    >
+      <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand mr-lg-5" href="{{ url_for('home') }}">
+          <img
+            src="{{ url_for('static', filename='assets/img/brand/blue.png') }}"
+          />
+        </a>
+
+        <!-- Toggle Button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbar_global"
+          aria-controls="navbar_global"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Items -->
+        <div class="navbar-collapse collapse" id="navbar_global">
+          <div class="navbar-collapse-header">
+            <div class="row">
+              <div class="col-6 collapse-brand">
+                <a href="{{ url_for('home') }}">
+                  <img
+                    src="{{ url_for('static', filename='assets/img/brand/blue.png') }}"
+                  />
+                </a>
+              </div>
+              <div class="col-6 collapse-close">
+                <button
+                  type="button"
+                  class="navbar-toggler"
+                  data-toggle="collapse"
+                  data-target="#navbar_global"
+                  aria-controls="navbar_global"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                >
+                  <span></span>
+                  <span></span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navbar Links -->
+          <ul class="navbar-nav align-items-lg-center ml-auto">
+            <!-- Github Icon -->
+            <li class="nav-item">
+              <a
+                class="nav-link nav-link-icon"
+                href="https://github.com/ChiragBellara/Video-Translation-Using-Deep-Learning"
+                target="_blank"
+                data-toggle="tooltip"
+                title="Visit our Github"
+              >
+                <i class="fa fa-github"></i>
+                <span class="nav-link-inner--text d-lg-none">Github</span>
+              </a>
+            </li>
+
+            <!-- How it works Button (Different Style) -->
+            <li class="nav-item">
+              <a class="btn btn-success" href="{{ url_for('howItWorks') }}">
+                <span class="nav-link-inner--text">How it works</span>
+              </a>
+            </li>
+
+            <!-- About Button -->
+            <li class="nav-item">
+              <a class="btn btn-outline-primary" href="{{ url_for('about') }}">
+                <span class="nav-link-inner--text">About</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- End Navbar -->
+    <!-- How it works -->
+    <div class="section features-1">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 mx-auto text-center">
+            <span class="badge badge-primary badge-pill mb-3"
+              >How it Works</span
+            >
+            <h3 class="display-3">4 Easy Steps to Follow</h3>
+            <p class="lead"></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="info">
+              <div
+                class="icon icon-lg icon-shape icon-shape-primary shadow rounded-circle"
+              >
+                <i class="fa fa-upload" aria-hidden="true"></i>
+              </div>
+              <h6 class="info-title text-uppercase text-primary">UPLOAD</h6>
+              <p class="description opacity-8">
+                Upload your video file to the platform. Alternatively you can
+                add a Youtube Link as well!
+              </p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="info">
+              <div
+                class="icon icon-lg icon-shape icon-shape-success shadow rounded-circle"
+              >
+                <i class="fa fa-language" aria-hidden="true"></i>
+              </div>
+              <h6 class="info-title text-uppercase text-success">
+                Select Language
+              </h6>
+              <p class="description opacity-8">
+                Select the target language for translation. For now, you can
+                translate your video to only English. But we are working on
+                adding support for more languages.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="info">
+              <div
+                class="icon icon-lg icon-shape icon-shape-warning shadow rounded-circle"
+              >
+                <i class="fa fa-magic" aria-hidden="true"></i>
+              </div>
+              <h6 class="info-title text-uppercase text-warning">AI Magic</h6>
+              <p class="description opacity-8">
+                AI will process and translate your video into the English
+                language
+              </p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="info">
+              <div
+                class="icon icon-lg icon-shape icon-shape-info shadow rounded-circle"
+              >
+                <i class="fa fa-download" aria-hidden="true"></i>
+              </div>
+              <h6 class="info-title text-uppercase text-info">Download</h6>
+              <p class="description opacity-8">
+                Download your translated video and share it with the world!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container text-center">
+        <!-- Star us on Github Section -->
+        <div class="row align-items-center justify-content-md-between">
+          <div class="col-md-12">
+            <h2 class="display-4">
+              ⭐ Star us on GitHub - For the Creators of the Template
+            </h2>
+            <p>
+              Your support means a lot! If you find our project helpful, please
+              consider giving it a star on GitHub.
+            </p>
+            <a
+              href="https://github.com/creativetimofficial/argon-design-system"
+              target="_blank"
+              class="btn btn-neutral btn-icon"
+            >
+              <span class="btn-inner--icon">
+                <i class="fa fa-github"></i>
+              </span>
+              <span class="btn-inner--text">Star on Github</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Core JS Files -->
+    <script
+      src="{{ url_for('static', filename='assets/js/core/jquery.min.js') }}"
+      type="text/javascript"
+    ></script>
+    <script
+      src="{{ url_for('static', filename='assets/js/core/popper.min.js') }}"
+      type="text/javascript"
+    ></script>
+    <script
+      src="{{ url_for('static', filename='assets/js/core/bootstrap.min.js') }}"
+      type="text/javascript"
+    ></script>
+    <script src="{{ url_for('static', filename='assets/js/plugins/perfect-scrollbar.jquery.min.js') }}"></script>
+    <!-- Plugin for Switches, full documentation here:
+    http://www.jque.re/plugins/version3/bootstrap.switch/ -->
+    <script src="{{ url_for('static', filename='assets/js/plugins/bootstrap-switch.js') }}"></script>
+    <!-- Plugin for the Sliders, full documentation here:
+    http://refreshless.com/nouislider/ -->
+    <script
+      src="{{ url_for('static', filename='assets/js/plugins/nouislider.min.js') }}"
+      type="text/javascript"
+    ></script>
+    <script src="{{ url_for('static', filename='assets/js/plugins/moment.min.js') }}"></script>
+    <script
+      src="{{ url_for('static', filename='assets/js/plugins/datetimepicker.js') }}"
+      type="text/javascript"
+    ></script>
+    <script src="{{ url_for('static', filename='assets/js/plugins/bootstrap-datepicker.min.js') }}"></script>
+    <!-- Control Center for Argon UI Kit: parallax effects, scripts for the example
+    pages etc -->
+    <!-- Google Maps Plugin -->
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script> -->
+    <script
+      src="{{ url_for('static', filename='assets/js/argon-design-system.min.js') }}"
+      type="text/javascript"
+    ></script>
+    <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+    <script>
+      window.TrackJS &&
+        TrackJS.install({
+          token: "ee6fab19c5a04ac1a32a645abde4613a",
+          application: "argon-design-system-pro",
+        });
+    </script>
+  </body>
+</html>

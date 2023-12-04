@@ -1,8 +1,17 @@
-from flask import Flask, redirect, url_for, render_template, request, Response
-app = Flask(__name__)
+# The UI is a template taken from "https://github.com/creativetimofficial/argon-design-system"
 
-out1 = "Assembly. A low-level programming language designed to simplify the instructions fed into a computer's CPU. In other words, it's a human readable abstraction on top of machine code, so programmers don't have to manually count ones and zeros. The first assembly language was created by Kathleen Booth in 1947 for the all-purpose electronic computer. Over the next decade, it evolved into many different formats to power the supercomputers of the day, like the IBM 7090, which had a $20 million price tag in today's dollars. Writing code in assembly was standard until the emergence of high-level languages, like Fortran, a few years later. However..."
-out2 = "काहू तो अच्छा, नाओ तो ज्यादा अच्छा। यदि चीजें आपकी इच्छानुसार होती हैं, तो यह अच्छा है। लेकिन अगर वे ऐसा नहीं करते, तो यह और भी अच्छा है। मैं हर समय अपने पिता को उद्धृत करता रहता हूं और मुझे यकीन है कि मैंने ऐसा लाखों बार किया है। पहली चीजों में से एक जो उन्होंने मुझे सिखाई वह थी, मन काहू तो अच्छा, नाव तो ज्यादा अच्छा। यदि चीजें आपकी इच्छानुसार होती हैं, तो यह अच्छा है। लेकिन अगर वे ऐसा नहीं करते, तो यह और भी अच्छा है। और मैं इसे कभी नहीं समझ सका. और जब मैंने उनसे पूछा, तो उन्होंने कहा, यदि वे आपकी इच्छा के अनुसार नहीं हो रहे हैं, तो वे किसी दैवीय शक्ति की इच्छा के अनुसार हो रहे हैं। और वह दैवीय शक्ति कभी भी आपके बारे में बुरा नहीं सोचेगी। इसलिए आपको इसे बेहतर मानकर इसका सम्मान करना होगा। तो अगर चीजें काम करतीं, तो मैंने कहा, ठीक है, अगर वे नहीं होतीं, तो मुझे लगता कि कोई दैवीय शक्ति या दिव्यता थी जो नहीं चाहती थी कि मैं ऐसा करूं। और शायद किसी अन्य अवसर की प्रतीक्षा करें. दूसरी बात जो उन्होंने मुझसे कही, वह यह थी कि जब मैं उस समय बहुत संघर्ष कर रहा था, तो मैंने कहा, आप जानते हैं, पला संघर्ष जीवन मैं। तो उन्होंने कहा, जीप्ता जीवन हीथप्तकसंगर्षा। मैं उससे कहता था, तुम्हें पता है, जीवन एक संघर्ष है। और वे कहते थे, जब तक जीवन है, संघर्ष रहेगा। मुझे लगता है कि अगर हम इस कारक को स्वीकार कर लें, तो आपका जीवन कभी आसान नहीं होगा। कुछ और होने वाला है. तो उस पर किसी प्रकार की निराशा में बैठने के बजाय, जागरूक रहें कि कल एक और चुनौती है, एक और दिन है, जो लाभदायक साबित हो सकता है, जो नहीं भी हो सकता है। लेकिन आख़िरकार एक और दिन आएगा जब आप फिर से प्रयास करना शुरू कर सकेंगे। मेरे दिमाग के पिछले हिस्से में वो बदसूरत पल होंगे जिन्होंने मुझे परेशान कर दिया था। और उनके दोबारा उभरने का डर ही शायद मुझे हर दिन प्रेरित करता है।"
+from flask import Flask, redirect, url_for, render_template, request, Response
+import os
+
+
+app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = 'static/'
+
+OUTPUT_VIDEO = "/content/DownloadedVideos/downloadedVideo.mkv"
+OUTPUT_AUDIO = "/content/OutcomeAudios/extractedAudio.wav"
+AUDIO_FOLDER = "/content/OutcomeAudios/"
+VIDEO_FOLDER = "/content/DownloadedVideos/"
+SAMPLING_RATE = 28000
 
 
 @app.route("/")
@@ -10,26 +19,51 @@ def home():
     return render_template('index.html')
 
 
-@app.route("/admin/")
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+
+@app.route('/how-it-works')
+def howItWorks():
+    return render_template('howItWorks.html')
+
+
+@app.route('/translate')
+def translate():
+    return render_template('code.html', showVideos=False)
+
+
+@app.route("/admin")
 def admin():
     return redirect(url_for("home"))
 
 
-@app.route("/video/", methods=["GET", "POST"])
-def getURL():
-    videoURL = request.form.get("videoUrl")
-    return render_template('index.html', WhisperOutcome=out1, TranslationOutcome=out2)
+@app.route("/translate_video", methods=["GET", "POST"])
+def translate_video():
+    isURL = False
+    if os.path.isfile(OUTPUT_VIDEO):
+        os.remove(OUTPUT_VIDEO)
+    if os.path.isfile(OUTPUT_AUDIO):
+        os.remove(OUTPUT_AUDIO)
+    if os.path.isfile('/content/static/translatedVideo.mkv'):
+        os.remove("/content/static/translatedVideo.mkv")
 
+    video_url = request.form.get('videoUrl')
+    video_file = request.files.get('videoFile')
+    print("-------------- VIDEO URL: " + video_url)
+    if video_url:
+        isURL = True
+        print("Download Video")
+        print("Extract Audio")
+    elif video_file:
+        # Handle uploaded file
+        filename = video_file.filename
+        file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        video_file.save(file_path)
+        print("Extract Audio")
 
-@app.route('/getAudioFile')
-def getAudioFile():
-    def generate():
-        with open("static/StarWars60.wav", "rb") as fwav:
-            data = fwav.read(1024)
-            while data:
-                yield data
-                data = fwav.read(1024)
-    return Response(generate(), mimetype="audio/x-wav")
+    return render_template('code.html', showVideos=True)
 
 
 if __name__ == "__main__":

@@ -1,41 +1,201 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='styles.css') }}"
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>Video Translation App</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="{{ url_for('static', filename='assets/img/apple-icon.png') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="{{ url_for('static', filename='assets/img/favicon.png') }}"
+    />
+    <title>Video Translator AI</title>
+    <!-- Fonts and icons -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"
+      rel="stylesheet"
+    />
+    <link
+      href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"
+      rel="stylesheet"
+    />
+    <!-- Nucleo Icons -->
+    <link
+      href="{{ url_for('static', filename='assets/css/nucleo-icons.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='assets/css/nucleo-svg.css') }}"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome Icons -->
+    <link
+      href="{{ url_for('static', filename='assets/css/font-awesome.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='assets/css/nucleo-svg.css') }}"
+      rel="stylesheet"
+    />
+    <!-- CSS Files -->
+    <link
+      href="{{ url_for('static', filename='assets/css/argon-design-system.css') }}"
+      rel="stylesheet"
+    />
   </head>
-  <body>
-    <div class="container">
-      <h1>Video Translation using Deep Learning</h1>
-      <p>Enter the URL of the video you want to translate:</p>
-      <form action="{{ url_for('getURL')}}" method="post">
-        <input
-          type="text"
-          id="videoUrl"
-          name="videoUrl"
-          placeholder="Video URL"
-        />
-        <button type="submit" id="translateButton">Translate</button>
-      </form>
-      <div class="output-box">
-        <h4>OpenAI Whisper</h4>
-        <p>{{WhisperOutcome}}</p>
-      </div>
-      <div class="output-box">
-        <h4>Machine Translation</h4>
-        <p>{{TranslationOutcome}}</p>
-      </div>
-      <div class="center">
-        <video width="640" height="480" controls>
-          <source
-            src="{{ url_for('static', filename='your_video.mp4') }}"
-            type="video/mp4"
+
+  <body class="index-page">
+    <!-- Navbar -->
+    <nav
+      id="navbar-main"
+      class="navbar navbar-main navbar-expand-lg bg-white navbar-light position-sticky top-0 shadow py-2"
+    >
+      <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand mr-lg-5" href="{{ url_for('home') }}">
+          <img
+            src="{{ url_for('static', filename='assets/img/brand/blue.png') }}"
           />
-          Your browser does not support the video tag.
-        </video>
+        </a>
+
+        <!-- Toggle Button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbar_global"
+          aria-controls="navbar_global"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Items -->
+        <div class="navbar-collapse collapse" id="navbar_global">
+          <div class="navbar-collapse-header">
+            <div class="row">
+              <div class="col-6 collapse-brand">
+                <a href="{{ url_for('home') }}">
+                  <img
+                    src="{{ url_for('static', filename='assets/img/brand/blue.png') }}"
+                  />
+                </a>
+              </div>
+              <div class="col-6 collapse-close">
+                <button
+                  type="button"
+                  class="navbar-toggler"
+                  data-toggle="collapse"
+                  data-target="#navbar_global"
+                  aria-controls="navbar_global"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                >
+                  <span></span>
+                  <span></span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navbar Links -->
+          <ul class="navbar-nav align-items-lg-center ml-auto">
+            <!-- Github Icon -->
+            <li class="nav-item">
+              <a
+                class="nav-link nav-link-icon"
+                href="https://github.com/ChiragBellara/Video-Translation-Using-Deep-Learning"
+                target="_blank"
+                data-toggle="tooltip"
+                title="Visit our Github"
+              >
+                <i class="fa fa-github"></i>
+                <span class="nav-link-inner--text d-lg-none">Github</span>
+              </a>
+            </li>
+
+            <!-- How it works Button (Different Style) -->
+            <li class="nav-item">
+              <a class="btn btn-success" href="{{ url_for('howItWorks') }}">
+                <span class="nav-link-inner--text">How it works</span>
+              </a>
+            </li>
+
+            <!-- About Button -->
+            <li class="nav-item">
+              <a class="btn btn-outline-primary" href="{{ url_for('about') }}">
+                <span class="nav-link-inner--text">About</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <!-- Hero Section -->
+    <div class="section section-hero section-shaped">
+      <div class="shape shape-style-1 shape-primary">
+        <span class="span-150"></span>
+        <span class="span-50"></span>
+        <span class="span-50"></span>
+        <span class="span-75"></span>
+        <span class="span-100"></span>
+        <span class="span-75"></span>
+        <span class="span-50"></span>
+        <span class="span-100"></span>
+        <span class="span-50"></span>
+        <span class="span-100"></span>
+      </div>
+      <div class="page-header">
+        <div class="container shape-container d-flex align-items-center py-lg">
+          <div class="col px-0">
+            <div class="row align-items-center justify-content-center">
+              <div class="col-lg-6 text-center">
+                <div class="mt-5"></div>
+                <img
+                  src="{{ url_for('static', filename='assets/img/brand/white.png') }}"
+                  style="width: 200px"
+                  class="img-fluid"
+                />
+                <p class="lead text-white">
+                  Translate your Video using Deep Learning!
+                </p>
+                <a
+                  href="{{ url_for('translate') }}"
+                  class="btn btn-lg btn-white btn-icon mb-3 mb-sm-0"
+                >
+                  <span class="btn-inner--icon">
+                    <i class="ni ni-button-play"></i>
+                  </span>
+                  <span class="btn-inner--text">Start</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container text-center mt-5">
+        <a
+          href="https://github.com/ChiragBellara/Video-Translation-Using-Deep-Learning"
+          class="btn btn-lg btn-github btn-icon mb-3 mb-sm-0"
+          target="_blank"
+        >
+          <span class="btn-inner--icon">
+            <i class="fa fa-github"></i>
+          </span>
+          <span class="btn-inner--text">
+            <span class="text-warning">View Code</span> on Github
+          </span>
+        </a>
       </div>
     </div>
   </body>
