@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="{{ url_for('static', filename='assets/img/apple-icon.png') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="{{ url_for('static', filename='assets/img/favicon.png') }}"
+    />
+    <title>Video Translator AI</title>
+    <!-- Fonts and icons -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"
+      rel="stylesheet"
+    />
+    <link
+      href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"
+      rel="stylesheet"
+    />
+    <!-- Nucleo Icons -->
+    <link
+      href="{{ url_for('static', filename='assets/css/nucleo-icons.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='assets/css/nucleo-svg.css') }}"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome Icons -->
+    <link
+      href="{{ url_for('static', filename='assets/css/font-awesome.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='assets/css/nucleo-svg.css') }}"
+      rel="stylesheet"
+    />
+    <!-- CSS Files -->
+    <link
+      href="{{ url_for('static', filename='assets/css/argon-design-system.css') }}"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="about-page">
+    <!-- Navbar -->
+    <nav
+      id="navbar-main"
+      class="navbar navbar-main navbar-expand-lg bg-white navbar-light position-sticky top-0 shadow py-2"
+    >
+      <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand mr-lg-5" href="{{ url_for('home') }}">
+          <img
+            src="{{ url_for('static', filename='assets/img/brand/blue.png') }}"
+          />
+        </a>
+
+        <!-- Toggle Button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbar_global"
+          aria-controls="navbar_global"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Items -->
+        <div class="navbar-collapse collapse" id="navbar_global">
+          <div class="navbar-collapse-header">
+            <div class="row">
+              <div class="col-6 collapse-brand">
+                <a href="{{ url_for('home') }}">
+                  <img
+                    src="{{ url_for('static', filename='assets/img/brand/blue.png') }}"
+                  />
+                </a>
+              </div>
+              <div class="col-6 collapse-close">
+                <button
+                  type="button"
+                  class="navbar-toggler"
+                  data-toggle="collapse"
+                  data-target="#navbar_global"
+                  aria-controls="navbar_global"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                >
+                  <span></span>
+                  <span></span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navbar Links -->
+          <ul class="navbar-nav align-items-lg-center ml-auto">
+            <!-- Github Icon -->
+            <li class="nav-item">
+              <a
+                class="nav-link nav-link-icon"
+                href="https://github.com/ChiragBellara/Video-Translation-Using-Deep-Learning"
+                target="_blank"
+                data-toggle="tooltip"
+                title="Visit our Github"
+              >
+                <i class="fa fa-github"></i>
+                <span class="nav-link-inner--text d-lg-none">Github</span>
+              </a>
+            </li>
+
+            <!-- How it works Button (Different Style) -->
+            <li class="nav-item">
+              <a class="btn btn-success" href="{{ url_for('howItWorks') }}">
+                <span class="nav-link-inner--text">How it works</span>
+              </a>
+            </li>
+
+            <!-- About Button -->
+            <li class="nav-item">
+              <a class="btn btn-outline-primary" href="{{ url_for('about') }}">
+                <span class="nav-link-inner--text">About</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <!-- About -->
+    <div class="section features-1">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 mx-auto text-center">
+            <span class="badge badge-primary badge-pill mb-3">About</span>
+          </div>
+        </div>
+        <h3 class="display-3">🚀 Project Overview:</h3>
+        <p class="lead"></p>
+        <p class="lead">
+          <b>🔍 What This Project Does:</b>
+          This project is designed to facilitate language translation in videos
+          using a combination of Automatic Speech Recognition (ASR), Machine
+          Translation (MT), and Text-to-Speech (TTS) models. Its primary aim is
+          to seamlessly convert a video from one language to another, enhancing
+          accessibility and comprehension.
+        </p>
+        <p class="lead">
+          <b>📅 Development Timeline:</b>
+          Developed during the Fall of 2023 as part of the CS 59000-03
+          Application Of Deep Learning LEC Class, this project represents the
+          collaborative effort of dedicated individuals within the class.
+        </p>
+        <p class="lead">
+          <b>🛠️ Key Components:</b>
+        </p>
+
+        <p class="lead">
+          ASR (Automatic Speech Recognition): Decodes spoken words, laying the
+          groundwork for subsequent translation.
+        </p>
+        <p class="lead">
+          MT (Machine Translation): Translates textual content from one language
+          to another.
+        </p>
+        <p class="lead">
+          TTS (Text-to-Speech): Converts translated text into audible speech.
+        </p>
+        <p class="lead">
+          Merge (Video + Audio): Adds the translated audio back to the original
+          video
+        </p>
+        <hr />
+        <h3 class="display-3">Developers</h3>
+
+        <!-- Developers -->
+        <div class="row text-center">
+          <!-- Developer 1 -->
+          <div class="col-md-3">
+            <div class="card-profile-image">
+              <h3 class="heading mb-0">Chirag Bellara</h3>
+            </div>
+          </div>
+          <!-- Developer 2 -->
+          <div class="col-md-3">
+            <h3 class="heading mb-0">Rohit Ramkumar</h3>
+          </div>
+          <!-- Developer 3 -->
+          <div class="col-md-3">
+            <h3 class="heading mb-0">Sai Suraj</h3>
+          </div>
+          <!-- Developer 4 -->
+          <div class="col-md-3">
+            <h3 class="heading mb-0">Shafayet</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <footer class="footer">
+        <footer class="footer">
+          <div class="container text-center">
+            <!-- Star us on Github Section -->
+            <div class="row align-items-center justify-content-md-between">
+              <div class="col-md-12">
+                <h2 class="display-4">
+                  ⭐ Star us on GitHub - For the Creators of the Template
+                </h2>
+                <p>
+                  Your support means a lot! If you find our project helpful,
+                  please consider giving it a star on GitHub.
+                </p>
+                <a
+                  href="https://github.com/creativetimofficial/argon-design-system"
+                  target="_blank"
+                  class="btn btn-neutral btn-icon"
+                >
+                  <span class="btn-inner--icon">
+                    <i class="fa fa-github"></i>
+                  </span>
+                  <span class="btn-inner--text">Star on Github</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </footer>
+    </div>
+    <!-- Core JS Files -->
+    <script
+      src="{{ url_for('static', filename='assets/js/core/jquery.min.js') }}"
+      type="text/javascript"
+    ></script>
+    <script
+      src="{{ url_for('static', filename='assets/js/core/popper.min.js') }}"
+      type="text/javascript"
+    ></script>
+    <script
+      src="{{ url_for('static', filename='assets/js/core/bootstrap.min.js') }}"
+      type="text/javascript"
+    ></script>
+    <script src="{{ url_for('static', filename='assets/js/plugins/perfect-scrollbar.jquery.min.js') }}"></script>
+    <!-- Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
+    <script src="{{ url_for('static', filename='assets/js/plugins/bootstrap-switch.js') }}"></script>
+    <!-- Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+    <script
+      src="{{ url_for('static', filename='assets/js/plugins/nouislider.min.js') }}"
+      type="text/javascript"
+    ></script>
+    <script src="{{ url_for('static', filename='assets/js/plugins/moment.min.js') }}"></script>
+    <script
+      src="{{ url_for('static', filename='assets/js/plugins/datetimepicker.js') }}"
+      type="text/javascript"
+    ></script>
+    <script src="{{ url_for('static', filename='assets/js/plugins/bootstrap-datepicker.min.js') }}"></script>
+    <!-- Control Center for Argon UI Kit: parallax effects, scripts for the example pages etc -->
+    <!-- Google Maps Plugin -->
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script> -->
+    <script
+      src="{{ url_for('static', filename='assets/js/argon-design-system.min.js') }}"
+      type="text/javascript"
+    ></script>
+    <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+    <script>
+      window.TrackJS &&
+        TrackJS.install({
+          token: "ee6fab19c5a04ac1a32a645abde4613a",
+          application: "argon-design-system-pro",
+        });
+    </script>
+  </body>
+</html>
