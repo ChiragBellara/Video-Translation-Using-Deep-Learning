@@ -24,6 +24,10 @@ h1 {
     font-size: 24px;
 }
 
+.videoHeader {
+    font-size: 14px;
+}
+
 input[type="text"] {
     width: 100%;
     padding: 10px;
@@ -59,4 +63,15 @@ button:hover {
 .center {
     text-align: center;
     margin-top: 20px;
+}
+.navbar {
+    background-color: #007bff;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #ffffff;
+}
+
+.navbar-dark .navbar-toggler-icon {
+    background-color: #ffffff;
 }
