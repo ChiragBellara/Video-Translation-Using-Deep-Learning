@@ -31,25 +31,52 @@ This project focuses on developing an automated system that uses deep learning t
 - Basic voice cloning capabilities
 - Seamless audio-video synchronization
 - Intuitive and user-friendly web interface
+  
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Models Used
 - **Speech Recognition:** OpenAI Whisper
 - **Machine Translation:** Google Translate, Azure AI Translator, MyMemory
 - **Text-to-Speech:** Bark by Suno
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Methodology
+Video Translation Process Steps:
+<ol>
+  <li>Video Input: Accepts input via</li>
+  <ul>
+    <li>YouTube URL</li>
+    <li>Direct video upload</li>
+  </ul>
+  <li>Video Processing: Prepares the video for translation.</li>
+  <li>Audio Extraction: Extracts audio from the video file.</li>
+  <li>Speech Recognition: Converts the extracted audio into text using OpenAI's Whisper model.</li>
+  <li>Machine Translation: Translates the text using one of the following models,</li>
+  <ul>
+    <li>Google Translate</li>
+    <li>Azure AI Translator</li>
+    <li>MyMemory</li>
+  </ul>
+  <li>Audio Generation: Converts the translated text into speech using Bark by Suno. Implements voice cloning techniques to preserve voice characteristics.</li>
+  <li>Audio-Video Merging: Synchronizes and merges the new audio with the original video using the ffmpeg library.</li>
+</ol>
+<div align="center">
+  <img src="https://github.com/ChiragBellara/Video-Translation-Using-Deep-Learning/blob/main/Information/Workflow.jpg">
+</div>
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Results
-### Project Update 1
-### Project Update 2
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Team
 <a href="https://github.com/ChiragBellara/Video-Translation-Using-Deep-Learning/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=ChiragBellara/Video-Translation-Using-Deep-Learning" />
 </a>
+
+## Acknowledgments
+- OpenAI for the <a href="https://github.com/openai/whisper">Whisper</a> model
+- Google, Microsoft Azure, and MyMemory for translation services
+- Suno for the <a href="https://github.com/suno-ai/bark">Bark</a> text-to-speech model
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
