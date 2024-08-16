@@ -24,20 +24,20 @@ As educational, informational, and entertainment videos become essential tools f
 This project focuses on developing an automated system that uses deep learning techniques to translate videos from one language to another. The process involves extracting audio from the video, performing speech recognition to convert spoken words into text, translating that text into the desired language, generating new audio from the translation, and then seamlessly merging it with the original video.
 
 ## Features
-- Support for YouTube URLs and direct video file uploads
-- Speech recognition powered by OpenAI Whisper
-- Multiple machine translation options, including Google Translate, Azure AI Translator, and MyMemory
-- Text-to-speech generation using Bark by Suno
-- Basic voice cloning capabilities
-- Seamless audio-video synchronization
-- Intuitive and user-friendly web interface
+* Support for YouTube URLs and direct video file uploads
+* Speech recognition powered by OpenAI Whisper
+* Multiple machine translation options, including Google Translate, Azure AI Translator, and MyMemory
+* Text-to-speech generation using Bark by Suno
+* Basic voice cloning capabilities
+* Seamless audio-video synchronization
+* Intuitive and user-friendly web interface
   
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Models Used
-- **Speech Recognition:** OpenAI Whisper
-- **Machine Translation:** Google Translate, Azure AI Translator, MyMemory
-- **Text-to-Speech:** Bark by Suno
+* **Speech Recognition:** OpenAI Whisper
+* **Machine Translation:** Google Translate, Azure AI Translator, MyMemory
+* **Text-to-Speech:** Bark by Suno
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Methodology
