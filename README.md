@@ -41,26 +41,8 @@ This project focuses on developing an automated system that uses deep learning t
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Methodology
-Video Translation Process Steps:
-<ol>
-  <li>Video Input: Accepts input via</li>
-  <ul>
-    <li>YouTube URL</li>
-    <li>Direct video upload</li>
-  </ul>
-  <li>Video Processing: Prepares the video for translation.</li>
-  <li>Audio Extraction: Extracts audio from the video file.</li>
-  <li>Speech Recognition: Converts the extracted audio into text using OpenAI's Whisper model.</li>
-  <li>Machine Translation: Translates the text using one of the following models,</li>
-  <ul>
-    <li>Google Translate</li>
-    <li>Azure AI Translator</li>
-    <li>MyMemory</li>
-  </ul>
-  <li>Audio Generation: Converts the translated text into speech using Bark by Suno. Implements voice cloning techniques to preserve voice characteristics.</li>
-  <li>Audio-Video Merging: Synchronizes and merges the new audio with the original video using the ffmpeg library.</li>
-</ol>
 <div align="center">
+    <img width="876" alt="image" src="https://github.com/user-attachments/assets/242f6566-c008-48ae-a68f-7fded24099a3">
     <img width="720" alt="image" src="https://github.com/user-attachments/assets/cb606b06-54fa-418c-b836-6a3af7397f78">
     <div>Workflow of the video translation application.</div>
 </div>
