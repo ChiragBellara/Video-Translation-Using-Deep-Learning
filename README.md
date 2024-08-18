@@ -66,7 +66,7 @@ Video Translation Process Steps:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Results
+## Installation
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Team
