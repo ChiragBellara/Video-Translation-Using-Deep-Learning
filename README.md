@@ -55,6 +55,7 @@ During the initiation and requirements phase, we conducted thorough research int
 ### Mid-Sem Review <a href="https://github.com/ChiragBellara/Bias_Detection_And_Mitigation_In_LLMs/blob/main/Outcomes/Project_Update_2.pdf"><strong>(Code)</strong></a>
 For the first review, our main goal was to establish a strong foundation and make initial progress in each step of our process. We divided the work into four sub-tasks and aimed to advance each one. By the time of the review, we had made solid progress in all the sub-tasks, setting the stage for further development.
 * Step 01 - Extracting the text from the video
+
   For a given video, we tested several open-source deep learning models to compare the time it took to extract text from the video and the accuracy of the extracted text.
   <div align="center">
     <img width="720" alt="image" src="https://github.com/user-attachments/assets/c4cd8a6c-48ec-45c4-997c-183c7eae52d2">
@@ -62,6 +63,7 @@ For the first review, our main goal was to establish a strong foundation and mak
   </div>
 
 * Step 02 - Machine Translation
+
   Similar to the first step, we tested multiple models, including Google Translate, and MyMemory, and compared their execution times and translation accuracy.
   <div align="center">
     <img width="720" alt="image" src="https://github.com/user-attachments/assets/de602511-4feb-486a-96bf-62503261efa9">
@@ -69,19 +71,12 @@ For the first review, our main goal was to establish a strong foundation and mak
   </div>
 
 * Step 03 - Text-to-Speech
+
   For the text-to-speech step, we utilized Suno's Bark model (https://github.com/suno-ai/bark), which employs transformers for voice generation and supports 13 languages. Given that a video can contain  lengthy speech, we also experimented with using NLTK to split the extracted text into individual sentences. Each sentence was processed separately and then merged into a single .wav file as the final output.
   
-  !audio[Sample output audio in Hindi](){}
-  !audio[Sample output audio in Japanese](){}
-  <div align="center">
-    <audio src="" controls preload></audio>
-    <div>Sample output audio in Hindi.</div>
-  </div>
-  <div align="center">
-    <audio src="" controls preload></audio>
-    <div>Sample output audio in Japanese.</div>
-  </div>
 * Step 04 - Combining audio and video into the outcome
+
+  We used the MoviePy Python library to merge the newly generated audio with the existing video, first removing the original audio from the video.
 
 
 ### End-Sem Review <a href="https://github.com/ChiragBellara/Bias_Detection_And_Mitigation_In_LLMs/blob/main/Outcomes/Project_Update_2.pdf"><strong>(Code)</strong></a>
