@@ -61,7 +61,8 @@ Video Translation Process Steps:
   <li>Audio-Video Merging: Synchronizes and merges the new audio with the original video using the ffmpeg library.</li>
 </ol>
 <div align="center">
-  <img src="https://github.com/ChiragBellara/Video-Translation-Using-Deep-Learning/blob/main/Information/Workflow.jpg">
+    <img width="720" alt="image" src="https://github.com/user-attachments/assets/cb606b06-54fa-418c-b836-6a3af7397f78">
+    <div>Workflow of the video translation application.</div>
 </div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
