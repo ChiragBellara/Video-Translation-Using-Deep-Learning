@@ -52,7 +52,7 @@ This project focuses on developing an automated system that uses deep learning t
 ## Results
 During the initiation and requirements phase, we conducted thorough research into existing technologies and developed a methodology aligned with our timeline and objectives. We designed a modular workflow and divided the entire process into two phases, each reviewed separately to ensure progress and alignment with our goals.
 
-### Mid-Sem Review <a href="https://github.com/ChiragBellara/Bias_Detection_And_Mitigation_In_LLMs/blob/main/Outcomes/Project_Update_2.pdf"><strong>(Code)</strong></a>
+### Mid-Sem Review <a href="https://github.com/ChiragBellara/Video-Translation-Using-Deep-Learning/tree/main/Mid_Sem_Project_Update"><strong>(Code)</strong></a>
 For the first review, our main goal was to establish a strong foundation and make initial progress in each step of our process. We divided the work into four sub-tasks and aimed to advance each one. By the time of the review, we had made solid progress in all the sub-tasks, setting the stage for further development.
 * Step 01 - Extracting the text from the video
 
@@ -79,7 +79,29 @@ For the first review, our main goal was to establish a strong foundation and mak
   We used the MoviePy Python library to merge the newly generated audio with the existing video, first removing the original audio from the video.
 
 
-### End-Sem Review <a href="https://github.com/ChiragBellara/Bias_Detection_And_Mitigation_In_LLMs/blob/main/Outcomes/Project_Update_2.pdf"><strong>(Code)</strong></a>
+### End-Sem Review <a href="https://github.com/ChiragBellara/Video-Translation-Using-Deep-Learning/tree/main/End_Sem_Update"><strong>(Code)</strong></a>
+Since the mid-semester review, our focus has been on improving the efficiency of the entire process and reducing the time required to translate any video. For the end-semester review, we concentrated on implementing more optimized algorithms at each step to achieve these goals.
+
+* Step 02 - Machine Translation
+
+  We utilized OpenAI Whisper to combine Step 01 and Step 02 into a single, streamlined step. With Whisper, we were able to transcribe and translate the video simultaneously, enhancing efficiency and reducing processing time.
+  <div align="center">
+    <img width="439" alt="image" src="https://github.com/user-attachments/assets/9c88dce2-8609-4a3b-8b0f-2d8df47e9d6d">
+    <div>Execution time for the machine translation using OpenAI Whisper.</div>
+  </div>
+
+* Step 03 - Text-to-Speech
+
+  For text-to-speech, we found that the Suno Bark model was slow in generating speech and lacked strong audio capabilities. To address this, we experimented with CoquiTTS, which supports more languages and delivers better overall speech generation with greater fluency. Additionally, CoquiTTS includes basic voice cloning capabilities, which align well with our project's needs.
+
+* Step 04 - Combining audio and video into the outcome
+
+  For audio and video merging, we have switched to using the FFmpeg utility, which offers greater flexibility and speed compared to the MoviePy library.
+
+* Flask app
+
+  We also developed a Flask application to simplify user interaction by hiding the complexities of the underlying system.
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Team
