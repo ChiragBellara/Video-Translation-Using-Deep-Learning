@@ -1,6 +1,0 @@
-This is the folder containing the code for the Step 1 which is either downloading a video from youtube or accepting user input (a video) followed by extracting the audio from the video and converting the extracted audio to text.
-The text output of this step will serve as the input for the next "Machine Translation" step.
-
-For now, the code contains accepts only a Youtube video URL.
-
-I have experimented with several models and compared the time taken to extract the text from a video for each of them.

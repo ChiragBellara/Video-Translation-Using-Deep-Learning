@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="{{ url_for('static', filename='assets/img/apple-icon.png') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="{{ url_for('static', filename='assets/img/favicon.png') }}"
+    />
+    <title>Video Translator AI</title>
+    <!-- Fonts and icons -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"
+      rel="stylesheet"
+    />
+    <link
+      href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"
+      rel="stylesheet"
+    />
+    <!-- Nucleo Icons -->
+    <link
+      href="{{ url_for('static', filename='assets/css/nucleo-icons.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='assets/css/nucleo-svg.css') }}"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome Icons -->
+    <link
+      href="{{ url_for('static', filename='assets/css/font-awesome.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='assets/css/nucleo-svg.css') }}"
+      rel="stylesheet"
+    />
+    <!-- CSS Files -->
+    <link
+      href="{{ url_for('static', filename='assets/css/argon-design-system.css') }}"
+      rel="stylesheet"
+    />
+
+    <style>
+      .wrapper {
+        text-align: center;
+        max-width: 750px;
+        background: #ffd600;
+        border-radius: 20px;
+        padding: 20px 25px 15px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body class="index-page">
+    <!-- Navbar -->
+    <nav
+      id="navbar-main"
+      class="navbar navbar-main navbar-expand-lg bg-white navbar-light position-sticky top-0 shadow py-2"
+    >
+      <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand mr-lg-5" href="{{ url_for('home') }}">
+          <img
+            src="{{ url_for('static', filename='assets/img/brand/blue.png') }}"
+          />
+        </a>
+
+        <!-- Toggle Button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbar_global"
+          aria-controls="navbar_global"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Items -->
+        <div class="navbar-collapse collapse" id="navbar_global">
+          <div class="navbar-collapse-header">
+            <div class="row">
+              <div class="col-6 collapse-brand">
+                <a href="{{ url_for('home') }}">
+                  <img
+                    src="{{ url_for('static', filename='assets/img/brand/blue.png') }}"
+                  />
+                </a>
+              </div>
+              <div class="col-6 collapse-close">
+                <button
+                  type="button"
+                  class="navbar-toggler"
+                  data-toggle="collapse"
+                  data-target="#navbar_global"
+                  aria-controls="navbar_global"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                >
+                  <span></span>
+                  <span></span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navbar Links -->
+          <ul class="navbar-nav align-items-lg-center ml-auto">
+            <!-- Github Icon -->
+            <li class="nav-item">
+              <a
+                class="nav-link nav-link-icon"
+                href="https://github.com/ChiragBellara/Video-Translation-Using-Deep-Learning"
+                target="_blank"
+                data-toggle="tooltip"
+                title="Visit our Github"
+              >
+                <i class="fa fa-github"></i>
+                <span class="nav-link-inner--text d-lg-none">Github</span>
+              </a>
+            </li>
+
+            <!-- How it works Button (Different Style) -->
+            <li class="nav-item">
+              <a class="btn btn-success" href="{{ url_for('howItWorks') }}">
+                <span class="nav-link-inner--text">How it works</span>
+              </a>
+            </li>
+
+            <!-- About Button -->
+            <li class="nav-item">
+              <a class="btn btn-outline-primary" href="{{ url_for('about') }}">
+                <span class="nav-link-inner--text">About</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <!-- Title -->
+    <div class="section features-1">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 mx-auto text-center">
+            <span class="badge badge-primary badge-pill mb-4"
+              >Video Translator</span
+            >
+            <h4 class="display-3">Upload your Video or Paste Youtube Link</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrapper mx-auto text-center">
+      <form
+        id="videoForm"
+        method="post"
+        action="{{ url_for('translate_video')}}"
+        enctype="multipart/form-data"
+      >
+        <div style="display: flex; flex-direction: column; align-items: center">
+          <!-- File Input -->
+          <div style="width: 100%; padding: 5px">
+            <label
+              for="uploadFile"
+              class="badge badge-pill badge-default text-uppercase"
+              >Upload Video</label
+            >
+            <input
+              type="file"
+              placeholder="Regular"
+              id="videoFile"
+              name="videoFile"
+              class="form-control-file"
+              accept="video/*,.mkv"
+            />
+          </div>
+          <!-- OR -->
+          <div style="padding: 5px">
+            <p class="lead">OR</p>
+          </div>
+          <!-- Youtube URL Input -->
+          <div style="width: 100%; padding: 10px">
+            <label
+              for="youtubeUrl"
+              class="badge badge-pill badge-default text-uppercase"
+              >YouTube URL</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="videoUrl"
+              name="videoUrl"
+              placeholder="Enter YouTube URL"
+            />
+          </div>
+        </div>
+        <!-- Select Target Language Dropdown -->
+        <div class="form-group">
+          <label
+            for="targetLanguage"
+            class="badge badge-pill badge-default text-uppercase"
+            >Target Language: ENGLISH</label
+          >
+        </div>
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-default">Translate</button>
+      </form>
+      <!-- Form End -->
+    </div>
+    {% if showVideos %}
+    <div class="row justify-content-center">
+      <div class="col-md-6 text-center mt-4">
+        <span class="row justify-content-center mb-1">Original Video</span>
+        <video width="80%" height="480px" controls>
+          <source
+            src="{{ url_for('static', filename='origninalVideo.mkv') }}"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+    <div class="row justify-content-center mt-4">
+      <div class="col-md-6 text-center mb-3">
+        <span class="row justify-content-center mb-1">Translated Video</span>
+        <video width="80%" height="480px" controls>
+          <source
+            src="{{ url_for('static', filename='translatedVideoFinal.mkv') }}"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+    {% endif %}
+  </body>
+</html>

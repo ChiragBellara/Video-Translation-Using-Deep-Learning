@@ -1,0 +1,15 @@
+README.md
+pyproject.toml
+src/vixlate/__init__.py
+src/vixlate/aligner_service.py
+src/vixlate/asr_service.py
+src/vixlate/config.py
+src/vixlate/experiment.py
+src/vixlate/ffmpeg_utils.py
+src/vixlate/io_utils.py
+src/vixlate/pipeline.py
+src/vixlate/tts_service.py
+src/vixlate.egg-info/PKG-INFO
+src/vixlate.egg-info/SOURCES.txt
+src/vixlate.egg-info/dependency_links.txt
+src/vixlate.egg-info/top_level.txt
