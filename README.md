@@ -88,7 +88,7 @@ os.environ["TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD"] = "1"
 
 During the initiation and requirements phase, we conducted thorough research into existing technologies and developed a methodology aligned with our timeline and objectives. We designed a modular workflow and divided the entire process into two phases, each reviewed separately to ensure progress and alignment with our goals.
 
-### Mid-Sem Review <a href="https://github.com/ChiragBellara/Video-Translation-Using-Deep-Learning/tree/main/Mid_Sem_Project_Update"><strong>(Code)</strong></a>
+### Mid-Sem Review <a href="https://github.com/ChiragBellara/Video-Translation-Using-Deep-Learning/tree/main/Experiments/Mid_Sem_Project_Update"><strong>(Code)</strong></a>
 
 For the first review, our main goal was to establish a strong foundation and make initial progress in each step of our process. We divided the work into four sub-tasks and aimed to advance each one. By the time of the review, we had made solid progress in all the sub-tasks, setting the stage for further development.
 
@@ -116,7 +116,7 @@ For the first review, our main goal was to establish a strong foundation and mak
 
   We used the MoviePy Python library to merge the newly generated audio with the existing video, first removing the original audio from the video.
 
-### End-Sem Review <a href="https://github.com/ChiragBellara/Video-Translation-Using-Deep-Learning/tree/main/End_Sem_Update"><strong>(Code)</strong></a>
+### End-Sem Review <a href="https://github.com/ChiragBellara/Video-Translation-Using-Deep-Learning/tree/main/Experiments/End_Sem_Update"><strong>(Code)</strong></a>
 
 Since the mid-semester review, our focus has been on improving the efficiency of the entire process and reducing the time required to translate any video. For the end-semester review, we concentrated on implementing more optimized algorithms at each step to achieve these goals.
 
