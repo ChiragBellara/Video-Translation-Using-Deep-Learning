@@ -69,14 +69,14 @@ To test the pipeline with existing code
 python scripts/test_pipeline.py
 ```
 
-[!IMPORTANT]
-You may encount the following error:
+> [!IMPORTANT]
+> You may encounter the following error:
 
 ```json
-{'status': 'failed', 'error': 'Weights only load failed. This file can still be loaded....}
+{'status': 'failed', 'error': 'Weights only load failed. This file can still be loaded....'}
 ```
 
-This is because we are using PyTorch 2.6 which does not explicitly trust pre-trained models. I'm not sure why this is the case, but I read that if we simply set an environment variable called "TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD" as True, torch will allow loading only weights from pre-trained models. This can be done by uncommenting line 3 to 5 in the test_pipeline.py file. Alternatively, you can just execute the following code snippet or place it in the test_pipeline.py or whatever your file is.
+This is because we are using PyTorch 2.6, which does not explicitly trust pre-trained models. I'm not sure why this is the case, but I read that if we simply set an environment variable called _TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD_ to True, torch will allow loading only weights from pre-trained models. This can be done by uncommenting line 3 to 5 in the test_pipeline.py file. Alternatively, you can just execute the following code snippet or place it in the test_pipeline.py or whatever your file is.
 It is important that this snippet gets executed before any other piece of code.
 
 ```python
